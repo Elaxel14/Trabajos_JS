@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Usuario</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<center><h1 style="background-color: black; color:#FFFFFF; ">--Informacion--</h1></center>
+
+<body bgcolor="#3A9DAF">
+    <div style="border: 1px solid white; width: 45%; margin-top: 10%; margin-left: 29%; box-shadow: 10px 10px 10px black;">
+    <center><h1 id="111"></h1></center>
+    <center><h2 id="222"></h2></center>
+    <center><h2 id="123"></h2></center>
+    <center><h2 id="301"></h2></center>
+    <center><h2 id="302"></h2></center>
+</div>
+    
+    
+    <script>
+
+        getParameter = (key) => {
+            address = window.location.search;
+
+            parameterList = new URLSearchParams(address);
+
+            return parameterList.get(key);
+        }
+        console.log(getParameter("contrasena"));
+        var contra = getParameter("contrasena");
+        var nombresito = getParameter("nombre");
+        var ape = getParameter("apellidos");
+        var tel = getParameter("telefono");
+        var malito = getParameter("correo");
+
+        if (contra.length < 5) {
+            document.getElementById("123").innerHTML = "La contrasena es insegura";
+        } else {
+            document.getElementById("123").innerHTML = "La contrasena es segura";
+        }
+        document.getElementById("111").innerHTML = "Bienvenido " + nombresito;
+        document.getElementById("222").innerHTML = ape;
+        document.getElementById("301").innerHTML = tel;
+        document.getElementById("302").innerHTML = malito;
+
+      
+    </script>
+</body>
+
+</html>
